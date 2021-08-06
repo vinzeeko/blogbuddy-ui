@@ -1,0 +1,14 @@
+mat-card {
+    max-width: 70%;
+    margin: 2em auto;
+    text-align: center;
+    background: rgb(182, 194, 233);
+  }
+  
+  mat-form-field {
+    display: block;
+  }
+
+  .text-area-custom {
+    height: 500px;
+  } 

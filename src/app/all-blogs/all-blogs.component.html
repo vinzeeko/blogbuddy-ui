@@ -1,0 +1,41 @@
+<div>
+    <br>
+    <div class="container">
+        <div class="container">
+            <div fxLayout="row" fxLayoutAlign="center center" class="content">
+                <mat-card class="card">
+                    <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
+                        <h3>Recent Posts</h3>
+                    </mat-card-title>
+                    <mat-card-content>
+                        <div class="example-container mat-elevation-z8">
+                            <mat-table #table [dataSource]="allBlogsData">
+
+                                <ng-container matColumnDef="title">
+                                    <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
+                                    <mat-cell *matCellDef="let element"> {{element.title}} </mat-cell>
+                                </ng-container>
+                                <ng-container matColumnDef="content">
+                                    <mat-header-cell *matHeaderCellDef> Content Preview </mat-header-cell>
+                                    <mat-cell *matCellDef="let element"> {{element.content}} </mat-cell>
+                                </ng-container>
+                                <ng-container matColumnDef="user">
+                                    <mat-header-cell *matHeaderCellDef> User </mat-header-cell>
+                                    <mat-cell *matCellDef="let element">
+                                         {{element.userName}} <br>
+                                         {{element.createdOn}}
+                                    </mat-cell>
+                                </ng-container>
+
+                                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                                <mat-row *matRowDef="let row; columns: displayedColumns;"
+                                    (click)="viewSelectedBlog(row)">
+                                </mat-row>
+                            </mat-table>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

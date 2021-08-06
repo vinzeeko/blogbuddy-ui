@@ -1,0 +1,16 @@
+<div style="background-image: url(assets/images/tr2.jpeg)">
+<mat-card>
+    <mat-card-content>
+        <form class="example-form" (ngSubmit)="onSubmit()">
+            <mat-form-field class="full-width-input">
+                <input matInput placeholder="lets give it a title" [(ngModel)]="blogData.title" name="title">
+            </mat-form-field>
+            <mat-form-field class="full-width-input">
+                <textarea class="text-area-custom" matInput placeholder="blog your content here"
+                    [(ngModel)]="blogData.content" name="content"></textarea>
+            </mat-form-field>
+            <button mat-raised-button color="primary">Post</button>
+        </form>
+    </mat-card-content>
+</mat-card>
+</div>

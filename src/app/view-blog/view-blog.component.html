@@ -1,0 +1,57 @@
+<div style="background-image: url(assets/images/tr2.jpeg)">
+    <br>
+    <div class="container">
+        <div class="container">
+            <div fxLayout="row" fxLayoutAlign="center center" class="content">
+                <mat-card class="layout-card" *ngIf="blogData">
+                    <mat-card-content>
+                        
+                            <mat-card class="blog-card">
+                                <mat-card-header>
+                                    <div mat-card-avatar class="example-header-image"></div>
+                                    <mat-card-title> {{blogData.title}}</mat-card-title>
+                                    <mat-card-subtitle>{{blogData.userName}}</mat-card-subtitle>
+                                </mat-card-header>
+
+                                <mat-card-content>
+                                    <p>
+                                        {{blogData.content}}
+                                    </p>
+                                </mat-card-content>
+                            </mat-card>
+                            <!-- comments list -->
+                            <mat-card class="comment-table" *ngIf="commentsData">
+                                <mat-card-header>
+                                    
+                                    <mat-card-subtitle>Comments:</mat-card-subtitle>
+                                </mat-card-header>
+                                <mat-table #table [dataSource]="commentsData">
+                                    <ng-container matColumnDef="comment">
+                                        <mat-cell *matCellDef="let element"> {{element.comment}} </mat-cell>
+                                    </ng-container>
+                                    <ng-container matColumnDef="userName" class="div-right-align">
+                                        <mat-cell *matCellDef="let element" > By user: {{element.userName}} on {{element.createdOn}}
+                                            </mat-cell>
+                                    </ng-container>                                
+                                    <mat-row *matRowDef="let row; columns: displayedColumns;">
+                                    </mat-row>
+                                </mat-table>
+                            </mat-card>
+                            <!-- post comment -->
+                            <mat-card class="comment-card">
+                                <mat-card-content>
+                                    <form class="comment-form" (ngSubmit)="onSubmit()">
+                                        <mat-form-field class="full-width-input">
+                                            <textarea class="text-area-custom" matInput placeholder="enter you comment here" [(ngModel)]="newCommentData.comment" name="comment"></textarea>
+                                        </mat-form-field>
+                                        <button mat-raised-button color="primary" [disabled]="!isAuthenticated">Post</button>
+                                    </form>
+                                </mat-card-content>
+                            </mat-card>
+                    </mat-card-content>
+                </mat-card>
+
+            </div>
+        </div>
+    </div>
+</div>

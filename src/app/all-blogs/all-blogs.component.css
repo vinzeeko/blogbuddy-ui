@@ -1,0 +1,45 @@
+.card {
+    min-width: 80%;
+    align-content: center;
+    margin-left: 200px;
+    margin-right: 200px;
+    background: rgb(132, 156, 233);
+  }
+  
+  .example-container {
+    display: flex;
+    flex-direction: column;
+    max-height: 500px;
+    min-width: 80%;
+    align-self: center;
+  }
+  
+  .mat-table {
+    overflow: auto;
+    max-height: 500px;
+  }
+  
+  a {
+    cursor: pointer;
+  }
+
+  .content {
+      min-height: 100%;
+  }
+  
+
+.mat-row:nth-child(even){
+    background: rgb(182, 194, 233);
+}
+        
+.mat-row:nth-child(odd){
+    background: rgb(191, 201, 231);
+}
+
+.mat-header-cell {
+    text-align: center;
+    align-items: right;
+    background-color: #3f51b5;
+    border-radius: 2px;
+    color: white;
+}
