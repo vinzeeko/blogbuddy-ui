@@ -78,5 +78,5 @@ If the backend api server is setup and is running locally at 8080, you can use t
 http://www.blogbuddy.com.s3-website.us-east-2.amazonaws.com/
 
 
-
+(page reloads are not working with this direct s3 hosting so we would have to use the main endpoint and use Home or other tabs to navigate through different sections of the app)
 
