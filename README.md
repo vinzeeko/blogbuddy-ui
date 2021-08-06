@@ -71,8 +71,11 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 
 
+## Hosted in S3
 
+If the backend api server is setup and is running locally at 8080, you can use this S3 endpoint to view Hosted endpoint which is refers to localhost:8080 for backend calls
 
+http://www.blogbuddy.com.s3-website.us-east-2.amazonaws.com/
 
 
 
